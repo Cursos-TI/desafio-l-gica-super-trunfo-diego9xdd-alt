@@ -104,7 +104,7 @@ int main() {
     
     printf("\n");
 
-    // Solicitação do Atributo para Comparação:
+    // Solicitação do  Primeiro Atributo para Comparação:
 
     
     printf("Digite o número correspondente ao atributo para comparação:\n\n");
@@ -115,74 +115,126 @@ int main() {
     printf("5 - Densidade Populacional\n");
     printf("Atributo selecionado: ");
     
-    int atributo_comparacao;
-    scanf("%d", &atributo_comparacao);
+    int atributo_comparacao_1;
+    scanf("%d", &atributo_comparacao_1);
 
     // Variável para armazenar o nome do atributo selecionado para comparação
-    char nome_atributo[50];
+    char nome_atributo_1[50];
+
+    printf("\n");
+
+
+    // Solicitação do Segundo Atributo para Comparação:
+
+    if (atributo_comparacao_1 == 1) {
+        printf("Digite o número correspondente ao segundo atributo para comparação:\n\n");
+        printf("2 - Área\n");
+        printf("3 - PIB\n");
+        printf("4 - Número de Pontos Turísticos\n");
+        printf("5 - Densidade Populacional\n");
+        printf("Segundo atributo selecionado: ");
+    } else if (atributo_comparacao_1 == 2) {
+        printf("Digite o número correspondente ao segundo atributo para comparação:\n\n");
+        printf("1 - População\n");
+        printf("3 - PIB\n");
+        printf("4 - Número de Pontos Turísticos\n");
+        printf("5 - Densidade Populacional\n");
+        printf("Segundo atributo selecionado: ");
+    } else if (atributo_comparacao_1 == 3) {
+        printf("Digite o número correspondente ao segundo atributo para comparação:\n\n");
+        printf("1 - População\n");
+        printf("2 - Área\n");
+        printf("4 - Número de Pontos Turísticos\n");
+        printf("5 - Densidade Populacional\n");
+        printf("Segundo atributo selecionado: ");
+    } else if (atributo_comparacao_1 == 4) {
+        printf("Digite o número correspondente ao segundo atributo para comparação:\n\n");
+        printf("1 - População\n");
+        printf("2 - Área\n");
+        printf("3 - PIB\n");
+        printf("5 - Densidade Populacional\n");
+        printf("Segundo atributo selecionado: ");
+    } else if (atributo_comparacao_1 == 5) {
+        printf("Digite o número correspondente ao segundo atributo para comparação:\n\n");
+        printf("1 - População\n");
+        printf("2 - Área\n");
+        printf("3 - PIB\n");
+        printf("4 - Número de Pontos Turísticos\n");
+        printf("Segundo atributo selecionado: ");
+    } else {
+        printf("Atributo inválido!\n");
+    }
+
+    int atributo_comparacao_2;
+    scanf("%d", &atributo_comparacao_2);
+
+    // Variável para armazenar o nome do segundo atributo selecionado para comparação
+    char nome_atributo_2[50];
+
 
     // Variável para armazenar o resultado da comparação
     // O resultado da comparação será representado por um número inteiro: 1 para vitória da carta 1, 2 para vitória da carta 2, e 0 para empate.
-    int resultado_comparacao;
+    int resultado_comparacao_1;
+    int resultado_comparacao_2;
 
 
-    switch (atributo_comparacao)
+    switch (atributo_comparacao_1)
     {
         case 1:
-            strcpy(nome_atributo, "População");
+            strcpy(nome_atributo_1, "População");
             if (populacao_1 > populacao_2) {
-                resultado_comparacao = 1;
+                resultado_comparacao_1 = 1;
             } else if (populacao_1 < populacao_2) {
-                resultado_comparacao = 2;
+                resultado_comparacao_1 = 2;
             } else {
                 // Em caso de empate, o resultado da comparação será 0
-                resultado_comparacao = 0;
+                resultado_comparacao_1 = 0;
             }
             break;
         
         case 2:
-            strcpy(nome_atributo, "Área");
+            strcpy(nome_atributo_1, "Área");
             if (area_1 > area_2) {
-                resultado_comparacao = 1;
+                resultado_comparacao_1 = 1;
             } else if (area_1 < area_2) {
-                resultado_comparacao = 2;
+                resultado_comparacao_1 = 2;
             } else {
-                resultado_comparacao = 0;
+                resultado_comparacao_1 = 0;
             }
             break;
         
         case 3:
-            strcpy(nome_atributo, "PIB");
+            strcpy(nome_atributo_1, "PIB");
             if (pib_1 > pib_2) {
-                resultado_comparacao = 1;
+                resultado_comparacao_1 = 1;
             } else if (pib_1 < pib_2) {
-                resultado_comparacao = 2;
+                resultado_comparacao_1 = 2;
             } else {
-                resultado_comparacao = 0;
+                resultado_comparacao_1 = 0;
             }
             break;
         
         case 4:
-            strcpy(nome_atributo, "Número de Pontos Turísticos");
+            strcpy(nome_atributo_1, "Número de Pontos Turísticos");
             if (num_pts_turisticos_1 > num_pts_turisticos_2)
             {
-                resultado_comparacao = 1;
+                resultado_comparacao_1 = 1;
             } else if (num_pts_turisticos_1 < num_pts_turisticos_2) {
-                resultado_comparacao = 2;
+                resultado_comparacao_1 = 2;
             } else {
-                resultado_comparacao = 0;
+                resultado_comparacao_1 = 0;
             }
             break;
         
         case 5:
-            strcpy(nome_atributo, "Densidade Populacional");
+            strcpy(nome_atributo_1, "Densidade Populacional");
             if (densidade_populacional_1 < densidade_populacional_2)
             {
-                resultado_comparacao = 1;
+                resultado_comparacao_1 = 1;
             } else if (densidade_populacional_1 > densidade_populacional_2) {
-                resultado_comparacao = 2;
+                resultado_comparacao_1 = 2;
             } else {
-                resultado_comparacao = 0;
+                resultado_comparacao_1 = 0;
             }
             break;
         
@@ -193,6 +245,75 @@ int main() {
     }
 
     printf("\n");
+
+    // Lógica para determinar o resultado da comparação do segundo atributo selecionado
+
+switch (atributo_comparacao_2)
+    {
+        case 1:
+            strcpy(nome_atributo_2, "População");
+            if (populacao_1 > populacao_2) {
+                resultado_comparacao_2 = 1;
+            } else if (populacao_1 < populacao_2) {
+                resultado_comparacao_2 = 2;
+            } else {
+                // Em caso de empate, o resultado da comparação será 0
+                resultado_comparacao_2 = 0;
+            }
+            break;
+        
+        case 2:
+            strcpy(nome_atributo_2, "Área");
+            if (area_1 > area_2) {
+                resultado_comparacao_2 = 1;
+            } else if (area_1 < area_2) {
+                resultado_comparacao_2 = 2;
+            } else {
+                resultado_comparacao_2 = 0;
+            }
+            break;
+        
+        case 3:
+            strcpy(nome_atributo_2, "PIB");
+            if (pib_1 > pib_2) {
+                resultado_comparacao_2 = 1;
+            } else if (pib_1 < pib_2) {
+                resultado_comparacao_2 = 2;
+            } else {
+                resultado_comparacao_2 = 0;
+            }
+            break;
+        
+        case 4:
+            strcpy(nome_atributo_2, "Número de Pontos Turísticos");
+            if (num_pts_turisticos_1 > num_pts_turisticos_2)
+            {
+                resultado_comparacao_2 = 1;
+            } else if (num_pts_turisticos_1 < num_pts_turisticos_2) {
+                resultado_comparacao_2 = 2;
+            } else {
+                resultado_comparacao_2 = 0;
+            }
+            break;
+        
+        case 5:
+            strcpy(nome_atributo_2, "Densidade Populacional");
+            if (densidade_populacional_1 < densidade_populacional_2)
+            {
+                resultado_comparacao_2 = 1;
+            } else if (densidade_populacional_1 > densidade_populacional_2) {
+                resultado_comparacao_2 = 2;
+            } else {
+                resultado_comparacao_2 = 0;
+            }
+            break;
+        
+        default:
+            // Caso o usuário insira um número inválido para o atributo de comparação, o programa exibirá uma mensagem de erro e encerrará a execução.
+            printf("Atributo inválido!\n");
+            break;
+    }
+
 
 
     // Exibição dos Resultados:
@@ -219,52 +340,145 @@ int main() {
 
     printf("\n");
 
-    // Exibição do Atributo Selecionado para Comparação
+    // Exibição do Primeiro Atributo Selecionado para Comparação
 
-    printf("Atributo selecionado para comparação: %s\n", nome_atributo);
+   
+    
+    printf("Primeiro atributo selecionado para comparação: %s\n", nome_atributo_1);
+    printf("Valor da carta 1 (%s): ", pais_1);
+
+    int soma_carta_1 = 0;
+    int soma_carta_2 = 0;
+    
+    if (atributo_comparacao_1 == 1) {
+        printf("%d", populacao_1);
+        soma_carta_1 += populacao_1;
+    } else if (atributo_comparacao_1 == 2) {
+        printf("%.2f km²", area_1);
+        soma_carta_1 += area_1;
+    } else if (atributo_comparacao_1 == 3) {
+        printf("%.2f bilhões de reais", pib_1);
+        soma_carta_1 += pib_1;
+    } else if (atributo_comparacao_1 == 4) {
+        printf("%d", num_pts_turisticos_1);
+        soma_carta_1 += num_pts_turisticos_1;  
+    } else if (atributo_comparacao_1 == 5) {
+        printf("%.2f habitantes por km²", densidade_populacional_1);
+        soma_carta_1 += densidade_populacional_1;
+    }
+
+    printf("\nValor da carta 2 (%s): ", pais_2);
+
+    int soma_carta_2 = 0;
+
+    if (atributo_comparacao_1 == 1) {
+        printf("%d", populacao_2);
+        soma_carta_2 += populacao_2;
+    } else if (atributo_comparacao_1 == 2) {
+        printf("%.2f km²", area_2);
+        soma_carta_2 += area_2;
+    } else if (atributo_comparacao_1 == 3) {
+        printf("%.2f bilhões de reais", pib_2);
+        soma_carta_2 += pib_2;
+    } else if (atributo_comparacao_1 == 4) {
+        printf("%d", num_pts_turisticos_2);
+        soma_carta_2 += num_pts_turisticos_2;
+    } else if (atributo_comparacao_1 == 5) {
+        printf("%.2f habitantes por km²", densidade_populacional_2);
+        soma_carta_2 += densidade_populacional_2;
+    }
+
+
+
+    
+
+    // Lógica para determinar a carta vencedora com base no resultado da comparação
+    
+    printf("\nResultado da comparação: ");
+
+    if (resultado_comparacao_2 == 1) {
+        printf("A carta vencedora é: %s", pais_1);
+    } else if (resultado_comparacao_2 == 2) {
+        printf("A carta vencedora é: %s", pais_2);
+    } else {
+        printf("Empate!");
+    }
+
+    printf("\n");
+
+    // Exibição do Segundo Atributo Selecionado para Comparação
+
+    
+
+    printf("\nSegundo atributo selecionado para comparação: %s\n", nome_atributo_2);
     printf("Valor da carta 1 (%s): ", pais_1);
     
-    if (atributo_comparacao == 1) {
+    if (atributo_comparacao_2 == 1) {
         printf("%d\n", populacao_1);
-    } else if (atributo_comparacao == 2) {
+        soma_carta_1 += populacao_1;
+    } else if (atributo_comparacao_2 == 2) {
         printf("%.2f km²\n", area_1);
-    } else if (atributo_comparacao == 3) {
+        soma_carta_1 += area_1;
+    } else if (atributo_comparacao_2 == 3) {
         printf("%.2f bilhões de reais\n", pib_1);
-    } else if (atributo_comparacao == 4) {
+        soma_carta_1 += pib_1;
+    } else if (atributo_comparacao_2 == 4) {
         printf("%d\n", num_pts_turisticos_1);
-    } else if (atributo_comparacao == 5) {
+        soma_carta_1 += num_pts_turisticos_1;
+    } else if (atributo_comparacao_2 == 5) {
         printf("%.2f habitantes por km²\n", densidade_populacional_1);
+        soma_carta_1 += densidade_populacional_1;
     }
 
     printf("Valor da carta 2 (%s): ", pais_2);
 
-    if (atributo_comparacao == 1) {
+    if (atributo_comparacao_2 == 1) {
         printf("%d\n", populacao_2);
-    } else if (atributo_comparacao == 2) {
+        soma_carta_2 += populacao_2;
+    } else if (atributo_comparacao_2 == 2) {
         printf("%.2f km²\n", area_2);
-    } else if (atributo_comparacao == 3) {
+        soma_carta_2 += area_2;
+    } else if (atributo_comparacao_2 == 3) {
         printf("%.2f bilhões de reais\n", pib_2);
-    } else if (atributo_comparacao == 4) {
+        soma_carta_2 += pib_2;
+    } else if (atributo_comparacao_2 == 4) {
         printf("%d\n", num_pts_turisticos_2);
-    } else if (atributo_comparacao == 5) {
+        soma_carta_2 += num_pts_turisticos_2;
+    } else if (atributo_comparacao_2 == 5) {
         printf("%.2f habitantes por km²\n", densidade_populacional_2);
+        soma_carta_2 += densidade_populacional_2;
+        
     }
 
     
 
     // Lógica para determinar a carta vencedora com base no resultado da comparação
     
-    if (resultado_comparacao == 1) {
-        printf("\nA carta vencedora é: %s\n", pais_1);
-    } else if (resultado_comparacao == 2) {
-        printf("\nA carta vencedora é: %s\n", pais_2);
+    printf("Resultado da comparação: ");
+
+    if (resultado_comparacao_2 == 1) {
+        printf("A carta vencedora é: %s\n", pais_1);
+    } else if (resultado_comparacao_2 == 2) {
+        printf("A carta vencedora é: %s\n", pais_2);
     } else {
-        printf("\nEmpate!\n");
+        printf("Empate!\n");
     }
 
     printf("\n");
 
 
+    // Lógica para determinar o vencedor com base na soma dos atributos escolhidos
+
+    printf("Soma dos atributos escolhidos para a carta 1 (%s): %d\n", pais_1, soma_carta_1);    
+    printf("Soma dos atributos escolhidos para a carta 2 (%s): %d\n", pais_2, soma_carta_2);    
+
+        if (soma_carta_1 > soma_carta_2) {
+            printf("A carta vencedora é: %s\n", pais_1);
+        } else if (soma_carta_2 > soma_carta_1) {
+            printf("A carta vencedora é: %s\n", pais_2);
+        } else {
+            printf("Empate!\n");
+        }
 
   
 
